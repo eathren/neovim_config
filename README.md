@@ -1,55 +1,40 @@
 # Neovim Configuration
 
-This repository contains my Neovim `init.vim` configuration file, which is designed to enhance the editing experience with various plugins and settings.
+This is my personal Neovim configuration optimized for development with React, TypeScript, Rust, Python, and general-purpose coding.
 
 ## Features
 
-- **Line Numbers**: Show both absolute and relative line numbers.
-- **Automatic Indentation**: Automatically handles indentation for better code formatting.
-- **Mouse Support**: Enables mouse usage within Neovim.
-- **Persistent Undo**: Keeps track of changes even after closing files.
-- **Search Enhancements**: Provides incremental search and highlights matches.
-  
-## Plugins
-
-The following plugins are included in the configuration:
-
-### UI Enhancements
-- **[vim-airline](https://github.com/vim-airline/vim-airline)**: Lightweight status/tabline for a cleaner look.
-- **[NERDTree](https://github.com/preservim/nerdtree)**: A file explorer for easy navigation.
-
-### Fuzzy Finder
-- **[fzf](https://github.com/junegunn/fzf)**: Fuzzy finder for quickly searching files.
-- **[fzf.vim](https://github.com/junegunn/fzf.vim)**: Integration for Vim.
-
-### Syntax Highlighting and Parsing
-- **[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)**: Improved syntax highlighting using tree-sitter.
-
-### Autocompletion
-- **[coc.nvim](https://github.com/neoclide/coc.nvim)**: Intellisense engine for autocompletion.
-
-### Productivity Tools
-- **[vim-fugitive](https://github.com/tpope/vim-fugitive)**: Git integration for version control.
-- **[vim-visual-multi](https://github.com/mg979/vim-visual-multi)**: Support for multiple cursors.
-
-## Key Mappings
-
-- **Toggle NERDTree**: `<C-n>` - Opens or closes the file explorer.
-- **Fuzzy Finder**: 
-  - `<C-p>` - Opens the file search.
-  - `<C-f>` - Searches for content using ripgrep.
-- **Autocompletion**: `<C-Space>` - Refreshes the completion suggestions.
-- **Git Status**: `<leader>gs` - Displays the Git status.
-- **Tmux Navigation**: 
-  - `<C-h>` - Navigate left in Tmux.
-  - `<C-j>` - Navigate down in Tmux.
-  - `<C-k>` - Navigate up in Tmux.
-  - `<C-l>` - Navigate right in Tmux.
-
+- Line numbering and relative line numbering for easier navigation
+- Auto-indentation with smart tab handling
+- Persistent undo functionality
+- Enhanced searching with smart case sensitivity
+- Fuzzy file finder using `fzf` for fast file navigation
+- NERDTree for a visual file explorer
+- `coc.nvim` for powerful autocompletion and language server support
+- Git integration with `vim-fugitive`
+- Multi-cursor support with `vim-visual-multi`
+- Tmux integration for easy pane navigation
+- 
 ## Installation
 
-1. **Install Neovim**: Ensure you have Neovim installed on your system.
-2. **Install Vim-Plug**: Make sure you have [vim-plug](https://github.com/junegunn/vim-plug) for managing plugins.
-3. **Clone this repository** (or copy the `init.vim` file to your Neovim configuration directory):
-   ```bash
-   git clone <repository-url>
+1. Install [Neovim](https://github.com/neovim/neovim) and [vim-plug](https://github.com/junegunn/vim-plug).
+2. Add this configuration to your `~/.config/nvim/init.vim`.
+3. Run `:PlugInstall` inside Neovim to install the plugins.
+
+### Basic Configuration
+
+```vim
+set number                                 " Show line numbers
+set relativenumber                         " Show relative line numbers
+set autoindent                             " Enable automatic indentation
+set tabstop=4                              " Set tab width to 4 spaces
+set shiftwidth=4                           " Set indentation width to 4 spaces
+set smarttab                               " Insert spaces instead of tabs
+set softtabstop=4                          " Make <Tab> key behave like 4 spaces
+set mouse=a                                " Enable mouse support
+set undofile                               " Enable persistent undo
+set undodir=~/.config/nvim/undo            " Directory for undo files
+set ignorecase                             " Ignore case in search patterns
+set smartcase                              " Override ignorecase if search pattern contains uppercase
+set incsearch                              " Incremental search
+set hlsearch                               " Highlight search matches
